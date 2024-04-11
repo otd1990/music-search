@@ -1,0 +1,29 @@
+.form {
+  background-color: #f6f6f6;
+  margin: 0 auto;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.input {
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  flex-grow: 1;
+  border: 0;
+  font-size: 1rem;
+  background-color: inherit;
+  padding: 0 0.5rem;
+}
+
+.button {
+  border: none;
+  background-color: #f87070;
+  color: #f6f6f6;
+  padding: 0.5rem 0.5rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+}

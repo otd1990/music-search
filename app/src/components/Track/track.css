@@ -1,0 +1,32 @@
+.track {
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+
+  background-color: #0d1520;
+  border-radius: 0.8rem;
+
+  padding: 0.5rem 1rem;
+}
+
+.track-info > p:not(:last-of-type) {
+  margin-bottom: 0.5rem;
+}
+
+.track-title {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.track-artist,
+.track-album {
+  color: #abaaad;
+  font-size: 0.75rem;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-volume-control-container {
+  display: none !important;
+}
