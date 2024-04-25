@@ -69,7 +69,7 @@ function Track({ track, handleClick, isPlaying }) {
         </button>
       </div>
       <Visualizer isPlaying={isPlaying} />
-      <div className="timeRemaining">
+      <div className="time-remaining">
         <span className="mins">00</span>
         <span className="seconds">:{time}</span>
       </div>
