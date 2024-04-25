@@ -1,0 +1,22 @@
+.visualiser-container {
+  flex: 1 0 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#visualizer {
+  display: flex;
+  align-items: flex-end;
+  height: 50px;
+  width: 100%;
+  background-color: transparent;
+  transform: translateY(-37%);
+}
+
+.bar {
+  margin: 0 1px;
+  background-color: #d9c6b7;
+  width: 2px;
+  height: 10px;
+}

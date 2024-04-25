@@ -10,6 +10,10 @@
   padding: 0.5rem 1rem;
 }
 
+.track-info {
+  flex: 1 0 1%;
+}
+
 .track-info > p:not(:last-of-type) {
   margin-bottom: 0.5rem;
 }
@@ -29,4 +33,25 @@ audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-timeline,
 audio::-webkit-media-controls-volume-control-container {
   display: none !important;
+}
+
+.track-button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.track-button svg {
+  height: 50px;
+  width: 50px;
+}
+
+.track-button svg path {
+  fill: #d9c6b7;
+}
+
+.time-remaining {
+  color: #abaaad;
+  font-size: 0.9rem;
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { searchTracks } from "./services/deezer";
 import Track from "./components/Track/Track";
 import SearchTracks from "./components/SearchTracks/SearchTracks";
@@ -19,7 +19,6 @@ function App() {
     setError(null);
     try {
       const data = await searchTracks(query);
-      console.log("App js data ", data);
       setTracks(data);
     } catch (error) {
       setError(error.message);
@@ -32,7 +31,11 @@ function App() {
     if (currentAudio && currentAudio.currentAudioPlaying) {
       if (currentAudio.src === preview) {
         currentAudio.audio.pause();
-        setCurrentAudio(null);
+        setCurrentAudio({
+          currentAudioPlaying: false,
+          src: null,
+          audio: null,
+        });
         return;
       } else {
         currentAudio.audio.pause();
@@ -41,6 +44,15 @@ function App() {
 
     const audio = new Audio(preview);
     audio.play();
+
+    audio.addEventListener("ended", () => {
+      setCurrentAudio({
+        currentAudioPlaying: false,
+        src: null,
+        audio: null,
+        playingTrackId: null,
+      });
+    });
 
     setCurrentAudio({
       currentAudioPlaying: true,
@@ -57,7 +69,16 @@ function App() {
       {!loading && (
         <div className="track-list">
           {tracks.map((track) => (
-            <Track key={track.id} track={track} handleClick={handleClick} />
+            <Track
+              key={track.id}
+              track={track}
+              handleClick={handleClick}
+              isPlaying={
+                currentAudio && currentAudio.src === track.preview
+                  ? true
+                  : false
+              }
+            />
           ))}
         </div>
       )}
